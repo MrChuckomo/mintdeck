@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Briefcase-Version: 0.3.5
+Name: mintdeck
+Formal-Name: Mint Deck
+App-ID: com.example.mintdeck
+Version: 0.0.1
+Home-page: https://example.com/mintdeck
+Author: Alexander Kettler
+Author-email: alexander@example.com
+Summary: Podcast desktop player
