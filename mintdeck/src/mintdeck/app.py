@@ -1,7 +1,9 @@
 """
 Podcast desktop player
 """
+
 import toga
+import httpx
 from toga.style import Pack
 from toga.style.pack import COLUMN, ROW
 
@@ -42,7 +44,18 @@ class MintDeck(toga.App):
         self.main_window.show()
 
     def say_hello(self, widget):
-        print('Hello', self.name_input.value)
+        if self.name_input.value:
+            name = self.name_input.value
+        else:
+            name = 'stranger'
+
+        response = httpx.get("https://jsonplaceholder.typicode.com/posts/42")
+        payload = response.json()
+
+        self.main_window.info_dialog(
+            f'Hello, {name}',
+            payload['body']
+        )
 
 
 def main():
